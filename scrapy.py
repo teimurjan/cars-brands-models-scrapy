@@ -59,6 +59,6 @@ class Scrapy:
             return [el.get_attribute('textContent') for el in model_elements]
         elif try_ < max_tries:
             time.sleep(0.5)
-            return self._get_models(max_tries, try_=try_)
+            return self._get_models(max_tries, try_=try_ + 1)
         else:
             raise Exception('Could not get models.')
